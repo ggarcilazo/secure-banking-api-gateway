@@ -3,18 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Portal de Desarrolladores - Core Bancario API</title>
+    <!-- Cargamos los estilos visuales de Swagger -->
     <link rel="stylesheet" href="https://unpkg.com">
 </head>
 <body>
+    <!-- Contenedor principal donde se dibujará la API -->
     <div id="swagger-ui"></div>
-    <script src="https://unpkg.com"></script>
+
+    <!-- Cargamos los motores JavaScript oficiales en orden correcto -->
+    <script src="https://unpkg.com" charset="UTF-8"></script>
+    <script src="https://unpkg.com" charset="UTF-8"></script>
+    
     <script>
         window.onload = () => {
+            // Inicializamos el contrato bancario de gran escala
             window.ui = SwaggerUIBundle({
-                url: './api-core/openapi.json', // Apunta directo a tu contrato de gran escala
+                url: './api-core/openapi.json', // Apunta directo a tu especificación
                 dom_id: '#swagger-ui',
                 deepLinking: true,
-                presets: [SwaggerUIBundle.presets.apis]
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIStandalonePreset
+                ],
+                layout: "BaseLayout"
             });
         };
     </script>
