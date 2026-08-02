@@ -1,0 +1,85 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Core Bancario - API Gateway & Pasarela de Pagos Segura",
+    "description": "Especificación financiera a gran escala para la gestión asíncrona de transferencias, validación de saldos y orquestación de webhooks con seguridad OAuth2 corporativa.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://secure-banking-api-gateway.mock",
+      "description": "Servidor de Simulación Sandbox Empresarial"
+    }
+  ],
+  "paths": {
+    "/api/v1/cuentas/saldos": {
+      "get": {
+        "summary": "Consultar Saldos y Movimientos Masivos",
+        "description": "Retorna el estado consolidado de la cuenta del cliente. Requiere Bearer Token OAuth2 válido en las cabeceras.",
+        "parameters": [
+          {
+            "name": "cuentaId",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string", "example": "ACC-77492-PERU" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Consulta exitosa de fondos",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "balanceDisponible": { "type": "number", "example": 45800.50 },
+                    "moneda": { "type": "string", "example": "PEN" },
+                    "estadoCuenta": { "type": "string", "example": "Activo" }
+                  }
+                }
+              }
+            }
+          },
+          "401": { "description": "Token inválido o expirado (No autorizado)" }
+        }
+      }
+    },
+    "/api/v1/pagos/transferir": {
+      "post": {
+        "summary": "Procesar Transferencia Inmediata (Alta Disponibilidad)",
+        "description": "Inyecta una orden de pago asíncrona en el libro contable digital del banco.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "origenCuenta": { "type": "string", "example": "ACC-77492-PERU" },
+                  "destinoCuenta": { "type": "string", "example": "ACC-88301-LIMA" },
+                  "monto": { "type": "number", "example": 1500.00 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Transacción aceptada para procesamiento asíncrono batch.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "transaccionId": { "type": "string", "example": "TX-9938210-UUID" },
+                    "estado": { "type": "string", "example": "Procesando (En Cola)" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
