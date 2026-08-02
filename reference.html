@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Referencia Técnica — Core Bancario API</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        .back-bar {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 13px;
+            padding: 12px 24px;
+            background: #101c2b;
+            color: #dfe8e0;
+        }
+        .back-bar a { color: #8fe0bb; text-decoration: none; }
+        .back-bar a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="back-bar">← <a href="index.html">Volver al portal</a></div>
+    <redoc spec-url='./api-core/openapi.json'
+           theme='{
+             "colors": {
+               "primary": { "main": "#1f6f54" }
+             },
+             "typography": {
+               "fontFamily": "Inter, sans-serif",
+               "headings": { "fontFamily": "Inter, sans-serif" },
+               "code": { "fontFamily": "IBM Plex Mono, monospace" }
+             }
+           }'>
+    </redoc>
+    <script src="https://cdn.jsdelivr.net/npm/redoc@2.1.3/bundles/redoc.standalone.js"></script>
+</body>
+</html>
