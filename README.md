@@ -26,8 +26,9 @@ El ecosistema se encuentra distribuido estratégicamente bajo estándares financ
 ## 📸 Evidencia de Disponibilidad del Portal Bancario
 La documentación está desplegada en internet de forma serverless. Cualquier evaluador o Developer de integraciones puede auditar y testear el comportamiento del sandbox interactivo de Swagger UI de manera pública.
 
-<img width="2845" height="1454" alt="Captura de pantalla 2026-08-01 232406" src="https://github.com/user-attachments/assets/3a621c44-c085-4b3e-83ce-109b11371a5d" />
 <img width="2842" height="1449" alt="Captura de pantalla 2026-08-01 232350" src="https://github.com/user-attachments/assets/4c06d9df-c899-49ec-8937-770c3754f684" />
+
+<img width="2845" height="1454" alt="Captura de pantalla 2026-08-01 232406" src="https://github.com/user-attachments/assets/3a621c44-c085-4b3e-83ce-109b11371a5d" />
 
 
 ---
