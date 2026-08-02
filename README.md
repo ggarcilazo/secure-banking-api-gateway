@@ -33,5 +33,4 @@ La documentación está desplegada en internet de forma serverless. Cualquier ev
 
 ---
 ## 👥 Colaboradores
-*   **Joaquín Garcilazo** (`ggarcilazo`) - Solution Architect, API Manager & Ciberseguridad Financiera.
-*   **Compañero** (`Yunibasu1`) - Ingeniero de QA Automation & Validador de Software.
+*   **Joaquín Garcilazo** (`ggarcilazo`) - Solution Architect, API Manager & Ciberseguridad Financiera, Ingeniero de QA Automation & Validador de Software.
